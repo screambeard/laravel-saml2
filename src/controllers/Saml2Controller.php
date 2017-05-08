@@ -43,7 +43,7 @@ class Saml2Controller extends Controller
             return Redirect::to($redirectUrl);
         }else {
 
-            return Redirect::to(Config::get('saml2::settings.loginRoute')); //may be set a configurable default
+            return Redirect::to(Config::get('settings.loginRoute')); //may be set a configurable default
         }
     }
 
@@ -56,7 +56,7 @@ class Saml2Controller extends Controller
     {
         Saml2Auth::sls();
         Event::fire('saml2.logoutRequestReceived');
-        return Redirect::to(Config::get('saml2::settings.logoutRoute')); //may be set a configurable default
+        return Redirect::to(Config::get('settings.logoutRoute')); //may be set a configurable default
     }
 
     /**
